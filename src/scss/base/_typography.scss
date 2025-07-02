@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+html {
+    font-size: 62.5%;
+}
+body {
+    min-height: 100vh;
+    font-family: $font-main;
+    font-size: rem(16);
+    letter-spacing: -0.06em;
+}
+
+p {
+    margin: 0;
+}

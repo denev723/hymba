@@ -1,0 +1,45 @@
+@use "sass:math";
+
+$font-nanum-gothic: "NanumGothic", sans-serif;
+$font-arial-black: "Arial Black", sans-serif;
+$font-s-core-dream: "S-CoreDream", sans-serif;
+$font-nanum-square: "NanumSquareAc", sans-serif;
+
+$font-main: $font-nanum-gothic;
+
+$color-primary: #00467f;
+$color-primary-hover: #1976d2;
+$color-success: #198754;
+$color-danger: #dc3545;
+$color-warning: #ffc107;
+$color-info: #0dcaf0;
+$color-default: #6c757d;
+$color-active: #0d6efd;
+
+// 공통 색상 변수
+$color-gray-100: #eeeeee;
+$color-gray-200: #dddddd;
+$color-gray-300: #cccccc;
+$color-gray-400: #888888;
+$color-gray-900: #111111;
+$color-orange: #ff4e00;
+$color-blue-800: #240ef0;
+$color-blue-700: #2342ff;
+$color-black: #191919;
+$color-white: #ffffff;
+$color-green: #06961e;
+$color-red: #f31119;
+$color-yellow: #ffd600;
+$color-blue-100: #00467f;
+$color-blue-200: #1976d2;
+$color-dark: #292a2a;
+$color-placeholder: #777777;
+
+// 리팩토링에서 추가된 색상들
+$color-black-20: rgba(0, 0, 0, 0.2);
+$color-black-10: rgba(0, 0, 0, 0.1);
+$color-black-08: rgba(0, 0, 0, 0.08);
+$color-black-05: rgba(0, 0, 0, 0.05);
+$color-blue-dark: #20283a;
+$color-blue-light: #f3f7ff;
+$color-yellow-bright: #f6ff00;

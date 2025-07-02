@@ -1,0 +1,180 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.is-header-hover {
+    .site-header {
+        &__bg {
+            display: flex;
+        }
+        &__cover {
+            display: flex;
+        }
+    }
+    .lnb-list {
+        .lnb-list__item {
+            & > .lnb-list__item-link {
+                &:hover {
+                    p {
+                        color: #004c86;
+                    }
+                }
+                p {
+                    color: $color-black;
+                }
+            }
+        }
+        &--depth-2 {
+            display: block;
+            .lnb-list__item {
+                & > .lnb-list__item-link {
+                    &:hover {
+                        p {
+                            color: #004c86;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.site-header {
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 rem(50);
+    z-index: 99;
+    &__wrapper {
+        max-width: rem(1720);
+        height: rem(100);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 0 rem(50);
+    }
+    &__logo {
+        width: rem(361);
+        flex-shrink: 0;
+        a {
+            width: rem(261);
+            height: rem(50);
+            display: block;
+            background-image: url(../images/site-logo-w.png);
+            background-position: 0% 50%;
+            background-repeat: no-repeat;
+            background-size: rem(261);
+        }
+    }
+    &__lnb {
+        height: 100%;
+        flex: 1;
+    }
+    &__bg {
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        &-left {
+            width: var(--header-left-width, 0);
+            flex-shrink: 0;
+            background-color: #004c86;
+        }
+        &-right {
+            flex: 1;
+            background-color: $color-white;
+        }
+    }
+    &__cover {
+        width: 100%;
+        height: var(--cover-height, 0);
+        display: none;
+        position: absolute;
+        top: rem(101);
+        left: 0;
+        z-index: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        &-left {
+            width: var(--header-left-width, 0);
+            flex-shrink: 0;
+            background-color: #004c86;
+        }
+        &-right {
+            flex: 1;
+            background-color: $color-white;
+        }
+    }
+}
+
+.lnb-list {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__item {
+        height: 100%;
+        position: relative;
+        & > &-link {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 rem(30);
+            &:hover {
+                p {
+                    color: #004c86;
+                }
+            }
+            p {
+                font-family: $font-nanum-square;
+                font-weight: 700;
+                font-size: rem(18);
+                line-height: lh(28, 18);
+                color: $color-white;
+                text-align: center;
+                &.lnb-list__text-kr {
+                    margin-bottom: rem(5);
+                }
+            }
+        }
+    }
+    &--depth-2 {
+        width: 100%;
+        padding: rem(20) 0;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 5;
+        .lnb-list__item {
+            & > .lnb-list__item-link {
+                display: block;
+                padding: rem(10);
+                &:hover {
+                    p {
+                        color: #004c86;
+                    }
+                }
+                p {
+                    font-family: $font-nanum-square;
+                    font-size: rem(16);
+                    line-height: 1;
+                    text-align: center;
+                    color: $color-black;
+                    &.lnb-list__item-text-kr {
+                        margin-bottom: rem(5);
+                    }
+                    &.lnb-list__item-text-en {
+                        font-size: rem(14);
+                        line-height: lh(24, 14);
+                    }
+                }
+            }
+        }
+    }
+}
