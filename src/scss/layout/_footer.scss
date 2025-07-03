@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.site-footer {
+    padding: 0 rem(50);
+    background-color: #141414;
+    position: relative;
+    .btn-top {
+        position: absolute;
+        top: rem(-68);
+        right: rem(100);
+    }
+    &__wrapper {
+        max-width: rem(1720);
+        margin: 0 auto;
+        padding: rem(60) 0 rem(70);
+        position: relative;
+    }
+    &__logo {
+        height: rem(41);
+        margin-bottom: rem(40);
+        background-image: url(../images/site-logo-sub.png);
+        background-size: rem(272);
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+    }
+    &__info {
+        &-address {
+            font-family: $font-nanum-gothic;
+            font-size: rem(16);
+            line-height: lh(30);
+            color: #838383;
+            .copyright {
+                color: #515151;
+            }
+        }
+    }
+    &__family-site {
+        position: absolute;
+        top: rem(60);
+        right: 0;
+        &-link {
+            width: rem(230);
+            display: block;
+            padding: rem(12) 0;
+            border-bottom: rem(2) solid #999999;
+            font-family: $font-nanum-gothic;
+            font-size: rem(14);
+            letter-spacing: -0.05em;
+            color: #999999;
+            position: relative;
+            &:hover {
+                color: #06b2ea;
+            }
+        }
+        &-logo {
+            width: rem(18);
+            height: 100%;
+            background-image: url(../images/family-darr.png);
+            background-size: rem(11);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}

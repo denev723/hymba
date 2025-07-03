@@ -6,8 +6,10 @@
 
 // layout
 @use "layout/header" as *;
+@use "layout/footer" as *;
 
 // components
 @use "components/button" as *;
 
 // pages
+@use "page/home" as *;

@@ -3,6 +3,7 @@
 
 .is-header-hover {
     .site-header {
+        border-bottom-color: #e2e2e2;
         &__bg {
             display: flex;
         }
@@ -15,7 +16,7 @@
             & > .lnb-list__item-link {
                 &:hover {
                     p {
-                        color: #004c86;
+                        color: #06b2ea;
                     }
                 }
                 p {
@@ -29,7 +30,9 @@
                 & > .lnb-list__item-link {
                     &:hover {
                         p {
-                            color: #004c86;
+                            color: #06b2ea;
+                            text-decoration: underline;
+                            text-underline-offset: rem(3);
                         }
                     }
                 }
@@ -96,7 +99,7 @@
         position: absolute;
         top: rem(101);
         left: 0;
-        z-index: 0;
+        z-index: 98;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         &-left {
             width: var(--header-left-width, 0);
@@ -127,19 +130,16 @@
             padding: 0 rem(30);
             &:hover {
                 p {
-                    color: #004c86;
+                    color: #06b2ea;
                 }
             }
             p {
                 font-family: $font-nanum-square;
                 font-weight: 700;
                 font-size: rem(18);
-                line-height: lh(28, 18);
+                line-height: lh(23);
                 color: $color-white;
                 text-align: center;
-                &.lnb-list__text-kr {
-                    margin-bottom: rem(5);
-                }
             }
         }
     }
@@ -157,7 +157,9 @@
                 padding: rem(10);
                 &:hover {
                     p {
-                        color: #004c86;
+                        color: #06b2ea;
+                        text-decoration: underline;
+                        text-underline-offset: rem(3);
                     }
                 }
                 p {
@@ -171,7 +173,7 @@
                     }
                     &.lnb-list__item-text-en {
                         font-size: rem(14);
-                        line-height: lh(24, 14);
+                        line-height: lh(24);
                     }
                 }
             }

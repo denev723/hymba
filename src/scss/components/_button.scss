@@ -1,11 +1,22 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+// bounce 애니메이션 keyframes
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
 .is-header-hover {
     .btn-sitemap {
         background-image: url(../images/menu-bar-b.png);
         &:hover {
-            background-image: url(../images/menu-bar-h.png);
+            background-image: url(../images/menu-bar-h-new.png);
         }
     }
 }
@@ -23,6 +34,84 @@
     background-size: rem(40);
     cursor: pointer;
     &:hover {
-        background-image: url(../images/menu-bar-h.png);
+        background-image: url(../images/menu-bar-h-new.png);
+    }
+}
+
+.btn-next {
+    width: rem(40);
+    height: rem(78);
+    display: block;
+    background-image: url(../images/mouse-logo.png);
+    background-size: rem(25);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    position: relative;
+    &::after {
+        content: "";
+        width: rem(14);
+        height: rem(8);
+        background-image: url(../images/cursor-darr.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        bottom: rem(20);
+        left: 50%;
+        animation: bounce 1.5s ease-in-out infinite;
+    }
+    &:hover {
+        background-image: url(../images/mouse-logo-h.png);
+        &::after {
+            background-image: url(../images/cursor-darr-h.png);
+        }
+    }
+}
+
+.btn-square {
+    display: inline-block;
+    padding: rem(13) rem(17);
+    border-radius: rem(6);
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: $font-nanum-gothic;
+    font-size: rem(14);
+    line-height: 1;
+    font-weight: 700;
+    &:hover {
+        background-color: $color-white;
+        color: #004c86;
+    }
+}
+
+.btn-more {
+    height: rem(20);
+    display: inline-flex;
+    align-items: center;
+    padding-left: rem(30);
+    background-image: url(../images/main/more-plus.png);
+    background-size: rem(20);
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    font-family: $font-nanum-gothic;
+    font-size: rem(16);
+    line-height: 1;
+    &:hover {
+        background-image: url(../images/main/more-plus-h.png);
+        color: #06b2ea;
+    }
+}
+
+.btn-top {
+    width: rem(68);
+    height: rem(68);
+    display: block;
+    background-color: #06b2ea;
+    background-image: url(../images/top-uarr.png);
+    background-size: rem(14);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    &:hover {
+        background-color: darken(#06b2ea, 10%);
     }
 }
