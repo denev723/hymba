@@ -262,19 +262,6 @@ $(document).ready(function () {
       nextEl: ".board__slide-next",
       prevEl: ".board__slide-prev",
     },
-    breakpoints: {
-      // 반응형 설정 (나중에 브라우저 크기에 따라 조정)
-      768: {
-        slidesPerView: "auto",
-        spaceBetween: 0,
-        slidesPerGroup: 1,
-      },
-      1024: {
-        slidesPerView: "auto",
-        spaceBetween: 0,
-        slidesPerGroup: 1,
-      },
-    },
   });
 
   // Side Pager 기능 (데스크탑에서만)

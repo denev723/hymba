@@ -117,6 +117,15 @@
 }
 
 @media (max-width: 768px) {
+    .btn-next {
+        height: rem(63);
+        background-size: rem(20);
+        &::after {
+            width: rem(10);
+            height: rem(6);
+        }
+    }
+
     .btn-sitemap {
         width: rem(40);
         background-size: rem(30);
@@ -126,5 +135,18 @@
         width: rem(48);
         height: rem(48);
         background-size: rem(10);
+    }
+
+    .btn-square {
+        padding: rem(11) rem(14);
+        border-radius: rem(4);
+        font-size: rem(12);
+    }
+
+    .btn-more {
+        height: rem(15);
+        padding-left: rem(20);
+        background-size: rem(15);
+        font-size: rem(12);
     }
 }
