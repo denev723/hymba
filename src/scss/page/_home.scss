@@ -386,6 +386,7 @@
         &-inner {
             width: 100%;
             max-width: rem(330);
+            padding: 0 rem(15);
             &.active {
                 .intro__content-text {
                     opacity: 1;
@@ -425,6 +426,7 @@
             min-height: rem(78);
             font-size: rem(16);
             line-height: lh(26);
+            word-break: keep-all;
         }
         &-btn {
             opacity: 0;
@@ -624,5 +626,98 @@
         transform: translateY(-50%);
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+@media (max-width: 1344px) {
+    .visual {
+        &__slide-controls {
+            left: rem(50);
+        }
+    }
+}
+
+@media (max-width: 1173px) {
+    .visual {
+        &__slide-controls {
+            display: none;
+        }
+        &__side-list {
+            display: none;
+        }
+    }
+
+    .intro {
+        height: rem(1080);
+        position: relative;
+        &__bg {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            &-img {
+                width: 100%;
+                height: 33.3333%;
+                &-1 {
+                    left: 0;
+                    top: 0;
+                    img {
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                &-2 {
+                    top: 33.3333%;
+                    left: 0;
+                }
+                &-3 {
+                    top: 66.6666%;
+                    left: 0;
+                    img {
+                        right: auto;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                img {
+                    min-width: auto;
+                }
+            }
+        }
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        &__content {
+            width: 100%;
+            height: 33.3333%;
+            flex-direction: column;
+            align-items: initial;
+            justify-content: initial;
+            &:not(:last-child) {
+                border-right: none;
+                border-bottom: 1px solid rgba($color-white, 0.2);
+            }
+            &-inner {
+                max-width: none;
+                height: 100%;
+                padding: 0 rem(20);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+            &-text {
+                padding-top: rem(85);
+                opacity: 1;
+            }
+            &-btn {
+                opacity: 1;
+            }
+        }
+    }
+
+    .side-pager {
+        display: none;
     }
 }

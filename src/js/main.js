@@ -1,7 +1,14 @@
 $(document).ready(function () {
   let hoverTimer;
 
+  // 데스크탑 사이즈 체크 함수
+  function isDesktop() {
+    return window.innerWidth > 1173;
+  }
+
   function updateHeaderLeftWidth() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
+
     const $siteLogo = $(".site-header__logo");
     if ($siteLogo.length) {
       const logoRight = $siteLogo.offset().left + $siteLogo.width();
@@ -14,6 +21,8 @@ $(document).ready(function () {
   }
 
   function updateCoverHeight() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
+
     let maxHeight = 0;
 
     $(".lnb-list--depth-2").each(function () {
@@ -33,12 +42,16 @@ $(document).ready(function () {
   }
 
   function showHeaderHover() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
+
     clearTimeout(hoverTimer);
     $("body").addClass("is-header-hover");
     updateCoverHeight();
   }
 
   function hideHeaderHover() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
+
     hoverTimer = setTimeout(function () {
       $("body").removeClass("is-header-hover");
     }, 300); // 200ms 지연
@@ -47,13 +60,49 @@ $(document).ready(function () {
   updateHeaderLeftWidth();
   $(window).on("resize", updateHeaderLeftWidth);
 
-  // header 영역 hover
-  $(".site-header").on("mouseover", showHeaderHover);
-  $(".site-header").on("mouseout", hideHeaderHover);
+  // header 영역 hover (데스크탑에서만)
+  if (isDesktop()) {
+    $(".site-header").on("mouseover", showHeaderHover);
+    $(".site-header").on("mouseout", hideHeaderHover);
 
-  // cover 영역에도 hover 이벤트 (타이머 취소)
-  $(".site-header__cover").on("mouseover", showHeaderHover);
-  $(".site-header__cover").on("mouseout", hideHeaderHover);
+    // cover 영역에도 hover 이벤트 (타이머 취소)
+    $(".site-header__cover").on("mouseover", showHeaderHover);
+    $(".site-header__cover").on("mouseout", hideHeaderHover);
+  }
+
+  // resize 이벤트로 데스크탑/모바일 전환 시 이벤트 재설정
+  $(window).on("resize", function () {
+    if (isDesktop()) {
+      // 데스크탑으로 전환 시 모든 기능 활성화
+      $(".site-header")
+        .off("mouseover mouseout")
+        .on("mouseover", showHeaderHover)
+        .on("mouseout", hideHeaderHover);
+      $(".site-header__cover")
+        .off("mouseover mouseout")
+        .on("mouseover", showHeaderHover)
+        .on("mouseout", hideHeaderHover);
+
+      // intro hover 효과 재활성화
+      initIntroHover();
+
+      // side pager 재활성화
+      initSidePager();
+    } else {
+      // 모바일로 전환 시 모든 기능 비활성화
+      $(".site-header").off("mouseover mouseout");
+      $(".site-header__cover").off("mouseover mouseout");
+      $("body").removeClass("is-header-hover");
+
+      // intro hover 효과 제거
+      $(".intro__content-inner").off("mouseenter mouseleave");
+      $(".intro__content-inner").removeClass("active");
+      $(".intro__bg-img").removeClass("active scale");
+
+      // side pager 비활성화 (active 클래스 제거)
+      $(".side-pager__item").removeClass("active");
+    }
+  });
 
   // 자동재생 상태 관리
   let isAutoplay = true;
@@ -164,38 +213,45 @@ $(document).ready(function () {
     }
   });
 
-  // Intro 섹션 hover 효과
+  // Intro 섹션 hover 효과 (데스크탑에서만)
   let introScaleTimer;
 
-  $(".intro__content-inner")
-    .on("mouseenter", function () {
-      const introItem = $(this).data("intro-item");
-      const $targetBg = $(`.intro__bg-img[data-intro-item="${introItem}"]`);
+  function initIntroHover() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
 
-      // 모든 active, scale 클래스 제거
-      $(".intro__content-inner").removeClass("active");
-      $(".intro__bg-img").removeClass("active scale");
+    $(".intro__content-inner")
+      .on("mouseenter", function () {
+        const introItem = $(this).data("intro-item");
+        const $targetBg = $(`.intro__bg-img[data-intro-item="${introItem}"]`);
 
-      // 타이머 클리어
-      clearTimeout(introScaleTimer);
+        // 모든 active, scale 클래스 제거
+        $(".intro__content-inner").removeClass("active");
+        $(".intro__bg-img").removeClass("active scale");
 
-      // 현재 콘텐츠와 해당 배경에 active 클래스 추가
-      $(this).addClass("active");
-      $targetBg.addClass("active");
+        // 타이머 클리어
+        clearTimeout(introScaleTimer);
 
-      // 0.3초 후 배경에 scale 클래스 추가
-      introScaleTimer = setTimeout(function () {
-        $targetBg.addClass("scale");
-      }, 400);
-    })
-    .on("mouseleave", function () {
-      // 타이머 클리어
-      clearTimeout(introScaleTimer);
+        // 현재 콘텐츠와 해당 배경에 active 클래스 추가
+        $(this).addClass("active");
+        $targetBg.addClass("active");
 
-      // 모든 클래스 제거
-      $(".intro__content-inner").removeClass("active");
-      $(".intro__bg-img").removeClass("active scale");
-    });
+        // 0.3초 후 배경에 scale 클래스 추가
+        introScaleTimer = setTimeout(function () {
+          $targetBg.addClass("scale");
+        }, 400);
+      })
+      .on("mouseleave", function () {
+        // 타이머 클리어
+        clearTimeout(introScaleTimer);
+
+        // 모든 클래스 제거
+        $(".intro__content-inner").removeClass("active");
+        $(".intro__bg-img").removeClass("active scale");
+      });
+  }
+
+  // 초기 실행
+  initIntroHover();
 
   // Board Swiper
   const boardSwiper = new Swiper("#boardSwiper", {
@@ -221,8 +277,10 @@ $(document).ready(function () {
     },
   });
 
-  // Side Pager 기능
+  // Side Pager 기능 (데스크탑에서만)
   function initSidePager() {
+    if (!isDesktop()) return; // 데스크탑에서만 실행
+
     // 사이드 페이저와 섹션들이 존재하는지 확인
     const $sidePager = $(".side-pager");
     if (!$sidePager.length) return;

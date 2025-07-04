@@ -42,7 +42,7 @@
         &-link {
             width: rem(230);
             display: block;
-            padding: rem(12) 0;
+            padding: rem(12) rem(18) rem(12) rem(2);
             border-bottom: rem(2) solid #999999;
             font-family: $font-nanum-gothic;
             font-size: rem(14);
@@ -63,6 +63,45 @@
             position: absolute;
             top: 0;
             right: 0;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 0 rem(20);
+        .btn-top {
+            top: rem(-48);
+            right: 0;
+        }
+        &__wrapper {
+            padding: rem(40) 0 rem(50);
+        }
+        &__logo {
+            height: rem(30);
+            margin-bottom: rem(30);
+            background-size: rem(200);
+        }
+        &__info {
+            &-address {
+                margin-bottom: rem(20);
+                font-size: rem(12);
+                line-height: lh(26);
+            }
+        }
+        &__family-site {
+            position: relative;
+            top: auto;
+            right: auto;
+            &-link {
+                width: rem(200);
+                padding: rem(10) rem(16) rem(10) rem(2);
+                font-size: rem(12);
+            }
+            &-logo {
+                width: rem(16);
+                background-size: rem(9);
+            }
         }
     }
 }
