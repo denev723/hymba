@@ -1,0 +1,174 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.subvisual {
+    padding-top: rem(100);
+    background-color: #bbbbbb;
+    &__wrapper {
+        height: rem(300);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 rem(20);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(45);
+        line-height: lh(55);
+        color: $color-white;
+    }
+}
+
+.snb {
+    padding: 0 rem(20);
+    border-top: 1px solid #838383;
+    border-bottom: 1px solid #838383;
+    &__wrapper {
+        max-width: rem(1720);
+        margin: 0 auto;
+        display: flex;
+    }
+    &__home {
+        border-left: 1px solid #838383;
+        border-right: 1px solid #838383;
+        &-link {
+            width: rem(68);
+            height: rem(68);
+            display: block;
+            background-image: url(../images/sub/snb-home.png);
+            background-size: rem(20);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            &:hover {
+                background-image: url(../images/sub/snb-home-h.png);
+            }
+        }
+    }
+    &__menu {
+        width: rem(244);
+        max-width: rem(280);
+        position: relative;
+        border-right: 1px solid #838383;
+        &.active {
+            .snb__menu-link {
+                &::before {
+                    transform: rotate(180deg);
+                }
+            }
+            .snb__depth-menu {
+                transform: scaleY(1);
+            }
+        }
+        &-link {
+            padding: rem(26) rem(74) rem(26) rem(40);
+            display: block;
+            font-family: $font-nanum-square;
+            font-weight: 300;
+            font-size: rem(16);
+            line-height: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $color-black;
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(54);
+                height: 100%;
+                display: block;
+                background-image: url(../images/sub/snb-darr.png);
+                background-size: rem(14);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                position: absolute;
+                top: 0;
+                right: rem(20);
+            }
+            &:hover {
+                color: #06b2ea;
+            }
+        }
+    }
+    &__depth-menu {
+        width: calc(100% + 2px);
+        padding: rem(10) 0;
+        border: 1px solid #838383;
+        position: absolute;
+        top: 100%;
+        left: -1px;
+        z-index: 9;
+        background-color: $color-white;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: transform 0.3s ease-in-out;
+        &__item {
+            &-link {
+                display: block;
+                padding: rem(7) rem(40);
+                font-family: $font-nanum-square;
+                font-weight: 300;
+                font-size: rem(16);
+                line-height: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                color: $color-black;
+                &:hover {
+                    color: #06b2ea;
+                    text-decoration: underline;
+                    text-underline-offset: rem(3);
+                }
+            }
+        }
+    }
+}
+
+.site-content {
+    min-height: rem(500);
+}
+
+@media (max-width: 768px) {
+    .subvisual {
+        padding-top: rem(80);
+        &__wrapper {
+            height: rem(200);
+            font-size: rem(25);
+            line-height: lh(35);
+        }
+    }
+
+    .snb {
+        padding: 0;
+        &__home {
+            &-link {
+                width: rem(48);
+                height: rem(48);
+                display: block;
+                background-size: rem(15);
+            }
+        }
+        &__menu {
+            width: rem(199);
+            max-width: calc((100% - rem(48) - 2px) / 2);
+            &-link {
+                padding: rem(17) rem(32) rem(17) rem(10);
+                font-size: rem(14);
+                &::before {
+                    width: rem(32);
+                    background-size: rem(12);
+                    background-position: calc(100% - rem(10)) 50%;
+                }
+            }
+        }
+        &__depth-menu {
+            &__item {
+                &-link {
+                    padding: rem(7) rem(10);
+                    font-size: rem(14);
+                }
+            }
+        }
+    }
+}

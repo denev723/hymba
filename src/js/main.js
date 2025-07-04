@@ -6,6 +6,11 @@ $(document).ready(function () {
     return window.innerWidth > 1173;
   }
 
+  // SNB 메뉴용 데스크탑 체크 함수 (768px 기준)
+  function isSNBDesktop() {
+    return window.innerWidth > 768;
+  }
+
   function updateHeaderLeftWidth() {
     if (!isDesktop()) return; // 데스크탑에서만 실행
 
@@ -102,6 +107,9 @@ $(document).ready(function () {
       // side pager 비활성화 (active 클래스 제거)
       $(".side-pager__item").removeClass("active");
     }
+
+    // SNB 메뉴 재초기화 (768px 기준)
+    initSNBMenu();
   });
 
   // 자동재생 상태 관리
@@ -344,6 +352,56 @@ $(document).ready(function () {
       }
     });
   }
+
+  // SNB 메뉴 이벤트 처리 함수
+  function initSNBMenu() {
+    const $snbMenus = $(".snb__menu");
+
+    if (!$snbMenus.length) return; // SNB 메뉴가 없으면 실행하지 않음
+
+    // 기존 document 클릭 이벤트 제거 (중복 방지)
+    $(document).off("click.snbMenu");
+
+    if (isSNBDesktop()) {
+      // 데스크탑 (768px 초과): mouseover/mouseout
+      $snbMenus
+        .off("mouseover mouseout click")
+        .on("mouseover", function () {
+          // 다른 메뉴들 active 제거
+          $snbMenus.not(this).removeClass("active");
+          // 현재 메뉴 active 추가
+          $(this).addClass("active");
+        })
+        .on("mouseout", function () {
+          $(this).removeClass("active");
+        });
+    } else {
+      // 모바일 (768px 이하): click 토글
+      $snbMenus.off("mouseover mouseout click").on("click", function (e) {
+        e.preventDefault();
+        e.stopPropagation(); // 이벤트 버블링 방지
+
+        // 다른 메뉴들 active 제거
+        $snbMenus.not(this).removeClass("active");
+        // 현재 메뉴 토글
+        $(this).toggleClass("active");
+      });
+    }
+
+    // 영역 밖 클릭 시 메뉴 닫기 (모바일에서는 필수, 데스크탑에서도 유용)
+    $(document).on("click.snbMenu", function (e) {
+      // SNB 영역 내부 클릭이면 무시
+      if ($(e.target).closest(".snb").length > 0) {
+        return;
+      }
+
+      // 모든 SNB 메뉴 닫기
+      $snbMenus.removeClass("active");
+    });
+  }
+
+  // 초기 실행
+  initSNBMenu();
 
   // DOM 로드 후 side-pager 초기화
   if (document.readyState === "loading") {
