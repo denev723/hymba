@@ -127,6 +127,21 @@
 
 .site-content {
     min-height: rem(500);
+    padding: 0 rem(50);
+    &__wrapper {
+        max-width: rem(1300);
+        margin: 0 auto;
+        padding: rem(80) 0 rem(180);
+    }
+}
+
+.page-title {
+    margin-bottom: rem(85);
+    font-family: $font-nanum-square;
+    font-weight: 800;
+    font-size: rem(36);
+    line-height: 1;
+    text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -170,5 +185,17 @@
                 }
             }
         }
+    }
+
+    .site-content {
+        padding: 0 rem(20);
+        &__wrapper {
+            padding: rem(50) 0 rem(90);
+        }
+    }
+
+    .page-title {
+        margin-bottom: rem(40);
+        font-size: rem(24);
     }
 }

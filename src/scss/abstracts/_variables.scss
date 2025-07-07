@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:color";
 
 $font-nanum-gothic: "NanumGothic", sans-serif;
 $font-arial-black: "Arial Black", sans-serif;
@@ -7,14 +8,18 @@ $font-nanum-square: "NanumSquareAc", sans-serif;
 
 $font-main: $font-nanum-gothic;
 
-$color-primary: #00467f;
-$color-primary-hover: #1976d2;
+$color-primary: #004c86;
+$color-primary-hover: color.scale(#004c86, $lightness: -10%);
+$color-secondary: #06b2ea;
+$color-secondary-hover: color.scale(#06b2ea, $lightness: -10%);
 $color-success: #198754;
 $color-danger: #dc3545;
 $color-warning: #ffc107;
 $color-info: #0dcaf0;
 $color-default: #6c757d;
 $color-active: #0d6efd;
+$color-em: #083b6b;
+$color-em-hover: color.scale(#083b6b, $lightness: -10%);
 
 // 공통 색상 변수
 $color-gray-100: #eeeeee;

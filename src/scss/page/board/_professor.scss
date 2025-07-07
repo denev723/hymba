@@ -1,0 +1,276 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.professor {
+    max-width: rem(1000);
+    margin: 0 auto;
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(40) rem(60);
+    }
+    &__item {
+        height: rem(230);
+        display: flex;
+        gap: 0 rem(20);
+        padding: rem(10) rem(70) rem(10) rem(10);
+        border: 1px solid #cccccc;
+        position: relative;
+        &-thumb {
+            width: rem(150);
+            height: 100%;
+            background-color: #f2f2f2;
+            position: relative;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        &-content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+        }
+        &-title {
+            margin-bottom: rem(5);
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: lh(22);
+        }
+        &-work {
+            flex: 1;
+            margin-bottom: rem(8);
+            font-family: $font-nanum-square;
+            font-size: rem(14);
+            line-height: lh(24);
+        }
+        &-tel,
+        &-mail {
+            display: flex;
+            align-items: center;
+            gap: 0 rem(8);
+            font-family: $font-nanum-square;
+            font-size: rem(14);
+            line-height: lh(26);
+            color: $color-black;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        &-tel {
+            &-logo {
+                display: block;
+                width: rem(20);
+                height: 100%;
+                background-image: url(../images/board/professor/phone.png);
+                background-size: rem(20);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+        }
+        &-mail {
+            &-logo {
+                display: block;
+                width: rem(20);
+                height: 100%;
+                background-image: url(../images/board/professor/mail.png);
+                background-size: rem(20);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+        }
+        &-btns {
+            width: rem(70);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid #cccccc;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        &-btn {
+            display: block;
+            flex: 1;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            &:not(:last-child) {
+                border-bottom: 1px solid #cccccc;
+            }
+            &--homepage {
+                background-image: url(../images/board/professor/homepage-logo.png);
+                &:hover {
+                    background-image: url(../images/board/professor/homepage-logo-h.png);
+                }
+                &.disabled {
+                    background-image: url(../images/board/professor/homepage-logo-d.png);
+                    pointer-events: none;
+                    cursor: not-allowed;
+                }
+            }
+            &--cv {
+                background-image: url(../images/board/professor/cv-logo.png);
+                &:hover {
+                    background-image: url(../images/board/professor/cv-logo-h.png);
+                }
+                &.disabled {
+                    background-image: url(../images/board/professor/cv-logo-d.png);
+                    pointer-events: none;
+                    cursor: not-allowed;
+                }
+            }
+            &--more {
+                background-image: url(../images/board/professor/more-logo.png);
+                &:hover {
+                    background-image: url(../images/board/professor/more-logo-h.png);
+                }
+                &.disabled {
+                    background-image: url(../images/board/professor/more-logo-d.png);
+                    pointer-events: none;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+
+.professor-detail {
+    max-width: rem(1000);
+    margin: 0 auto;
+    border-top: rem(3) solid #111111;
+    &__wrapper {
+        display: flex;
+        gap: 0 rem(30);
+        padding: rem(30) 0;
+        margin-bottom: rem(80);
+        border-bottom: 1px solid #111111;
+    }
+    &__info {
+        width: rem(270);
+    }
+    &__content {
+        flex: 1;
+    }
+    &__thumb {
+        width: rem(200);
+        height: rem(260);
+        margin-bottom: rem(20);
+        background-color: #f2f2f2;
+        position: relative;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__name {
+        margin-bottom: rem(10);
+        font-family: $font-nanum-square;
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: lh(34);
+    }
+    &__tel,
+    &__mail {
+        font-family: $font-nanum-square;
+        font-size: rem(16);
+        line-height: lh(26);
+        a {
+            font-family: $font-nanum-square;
+            font-size: rem(16);
+            line-height: lh(26);
+            color: $color-black;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    &__btns {
+        display: flex;
+        justify-content: center;
+        gap: 0 rem(6);
+    }
+}
+
+.staff {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 rem(30);
+    }
+    &__item {
+        width: calc((100% - #{rem(30)}) / 2);
+        height: rem(246);
+        display: flex;
+        flex-direction: column;
+        padding: rem(30) rem(25);
+        border-bottom: 1px solid #e3e3e3;
+        &:nth-child(1),
+        &:nth-child(2) {
+            border-top: 1px solid $color-black;
+        }
+        &-name {
+            margin-bottom: rem(20);
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(30);
+            line-height: 1;
+        }
+        &-position {
+            font-weight: 400;
+            font-size: rem(22);
+        }
+        &-work {
+            flex: 1;
+            margin-bottom: rem(14);
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(30);
+        }
+        &-tel,
+        &-mail {
+            display: flex;
+            align-items: center;
+            gap: 0 rem(8);
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(26);
+            color: $color-black;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        &-tel {
+            &-logo {
+                display: block;
+                width: rem(20);
+                height: 100%;
+                background-image: url(../images/board/professor/phone.png);
+                background-size: rem(20);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+        }
+        &-mail {
+            &-logo {
+                display: block;
+                width: rem(20);
+                height: 100%;
+                background-image: url(../images/board/professor/mail.png);
+                background-size: rem(20);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+        }
+    }
+}

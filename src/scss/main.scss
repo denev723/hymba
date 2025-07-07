@@ -14,3 +14,7 @@
 // pages
 @use "page/home" as *;
 @use "page/sub" as *;
+@use "page/subpage" as *;
+
+// page
+@use "page/board/professor" as *;

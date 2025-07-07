@@ -15,7 +15,9 @@
 .is-header-hover {
     .btn-sitemap {
         background-image: url(../images/menu-bar-b.png);
-        &:hover {
+        &:hover,
+        &:focus,
+        &:active {
             background-image: url(../images/menu-bar-h-new.png);
         }
     }
@@ -33,7 +35,9 @@
     background-repeat: no-repeat;
     background-size: rem(40);
     cursor: pointer;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-image: url(../images/menu-bar-h-new.png);
     }
 }
@@ -60,7 +64,9 @@
         left: 50%;
         animation: bounce 1.5s ease-in-out infinite;
     }
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-image: url(../images/mouse-logo-h.png);
         &::after {
             background-image: url(../images/cursor-darr-h.png);
@@ -78,9 +84,11 @@
     font-size: rem(14);
     line-height: 1;
     font-weight: 700;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-color: $color-white;
-        color: #004c86;
+        color: $color-primary;
     }
 }
 
@@ -96,9 +104,11 @@
     font-family: $font-nanum-gothic;
     font-size: rem(16);
     line-height: 1;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-image: url(../images/main/more-plus-h.png);
-        color: #06b2ea;
+        color: $color-secondary;
     }
 }
 
@@ -106,13 +116,35 @@
     width: rem(68);
     height: rem(68);
     display: block;
-    background-color: #06b2ea;
+    background-color: $color-secondary;
     background-image: url(../images/top-uarr.png);
     background-size: rem(14);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    &:hover {
-        background-color: darken(#06b2ea, 10%);
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-secondary-hover;
+    }
+}
+
+.btn {
+    display: inline-block;
+    &.btn--lg {
+        padding: rem(18) rem(28);
+        border-radius: rem(6);
+        font-family: $font-nanum-square;
+        font-size: rem(20);
+        line-height: 1;
+    }
+    &.btn--primary {
+        background-color: $color-primary;
+        color: $color-white;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-primary-hover;
+        }
     }
 }
 

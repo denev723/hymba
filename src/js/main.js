@@ -3,7 +3,7 @@ $(document).ready(function () {
 
   // 데스크탑 사이즈 체크 함수
   function isDesktop() {
-    return window.innerWidth > 1173;
+    return window.innerWidth > 1267;
   }
 
   // SNB 메뉴용 데스크탑 체크 함수 (768px 기준)
