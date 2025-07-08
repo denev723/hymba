@@ -1,0 +1,104 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.board--default {
+    .board__top {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0 rem(15);
+        margin-bottom: rem(20);
+    }
+    .board__body {
+        border-top: 2px solid $color-black;
+        &:has(.alert) {
+            border-top: none;
+        }
+    }
+    .board-form {
+        flex: 1;
+        &__wrapper {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0 rem(5);
+            input {
+                width: 100%;
+                max-width: rem(200);
+                height: rem(50);
+                padding: rem(10) rem(20);
+                border-radius: rem(5);
+                border: 1px solid #ccc;
+                font-family: $font-nanum-square;
+                font-size: rem(16);
+                line-height: 1;
+                &:focus {
+                    border-color: $color-primary;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .board__list {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(80);
+        &.board__list--important {
+            margin-bottom: 0;
+            .board__item {
+                &:last-child {
+                    .board__item-link {
+                        border-bottom-color: $color-black;
+                    }
+                }
+                .board__item-link {
+                    background-color: #f9f9f9;
+                }
+            }
+        }
+        .board__item {
+            .board__item-link {
+                min-height: rem(70);
+                display: flex;
+                align-items: center;
+                gap: 0 rem(20);
+                padding: rem(15) rem(80) rem(15) 0;
+                border-bottom: 1px solid #dddddd;
+                background-image: url(../images/board/default/notice-rarr-g.png);
+                background-size: rem(40);
+                background-repeat: no-repeat;
+                background-position: calc(100% - rem(20)) 50%;
+                font-family: $font-nanum-square;
+                font-size: rem(16);
+                line-height: lh(26);
+                &:hover,
+                &:focus,
+                &:active {
+                    background-image: url(../images/board/default/notice-rarr-b.png);
+                    border-bottom-color: $color-black;
+                }
+                .board__item-date {
+                    width: rem(150);
+                    flex-shrink: 0;
+                    text-align: center;
+                }
+                .board__item-title {
+                    width: calc(100% - rem(170));
+                    flex: 1;
+                    &:has(.label) {
+                        display: flex;
+                        gap: 0 rem(5);
+                        p {
+                            flex: 1;
+                        }
+                    }
+                    p {
+                        width: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}

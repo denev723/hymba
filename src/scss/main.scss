@@ -10,6 +10,10 @@
 
 // components
 @use "components/button" as *;
+@use "components/table" as *;
+@use "components/pagination" as *;
+@use "components/alert" as *;
+@use "components/label" as *;
 
 // pages
 @use "page/home" as *;
@@ -18,3 +22,4 @@
 
 // page
 @use "page/board/professor" as *;
+@use "page/board/default" as *;

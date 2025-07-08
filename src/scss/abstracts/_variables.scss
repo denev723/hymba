@@ -9,17 +9,21 @@ $font-nanum-square: "NanumSquareAc", sans-serif;
 $font-main: $font-nanum-gothic;
 
 $color-primary: #004c86;
-$color-primary-hover: color.scale(#004c86, $lightness: -10%);
+$color-primary-hover: color.scale(#004c86, $lightness: -15%);
 $color-secondary: #06b2ea;
 $color-secondary-hover: color.scale(#06b2ea, $lightness: -10%);
-$color-success: #198754;
-$color-danger: #dc3545;
-$color-warning: #ffc107;
-$color-info: #0dcaf0;
+$color-success: #5cb85c;
+$color-danger: #d9534f;
+$color-warning: #f0ad4e;
+$color-info: #5bc0de;
 $color-default: #6c757d;
 $color-active: #0d6efd;
 $color-em: #083b6b;
 $color-em-hover: color.scale(#083b6b, $lightness: -10%);
+$color-tab-secondary: #f0f0f0;
+$color-tab-secondary-hover: color.scale(#f0f0f0, $lightness: -10%);
+$color-pagination-default: #f0f0f0;
+$color-pagination-default-hover: color.scale(#f0f0f0, $lightness: -10%);
 
 // 공통 색상 변수
 $color-gray-100: #eeeeee;

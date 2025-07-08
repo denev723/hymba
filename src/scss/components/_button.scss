@@ -128,8 +128,28 @@
     }
 }
 
+.btn-submit {
+    display: block;
+    padding: rem(17) rem(15);
+    border-radius: rem(5);
+    background-color: $color-tab-secondary;
+    font-family: $font-nanum-square;
+    font-size: rem(16);
+    line-height: 1;
+    color: $color-black;
+    text-align: center;
+    &:hover {
+        background-color: $color-tab-secondary-hover;
+    }
+}
+
 .btn {
     display: inline-block;
+    padding: rem(10) rem(16);
+    border-radius: rem(4);
+    font-family: $font-nanum-square;
+    font-size: rem(14);
+    line-height: 1;
     &.btn--lg {
         padding: rem(18) rem(28);
         border-radius: rem(6);

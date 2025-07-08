@@ -126,6 +126,94 @@
     }
 }
 
+.track-intro,
+.graduation,
+.changes,
+.scholarship {
+    &__row {
+        margin-bottom: rem(50);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__title {
+        padding-left: rem(37);
+        margin-bottom: rem(30);
+        font-family: $font-nanum-square;
+        font-weight: 800;
+        font-size: rem(24);
+        line-height: 1;
+        position: relative;
+        &::before {
+            content: "";
+            width: rem(22);
+            height: rem(22);
+            background-image: url(../images/subpage/squares.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+    &__content {
+        font-family: $font-nanum-square;
+        font-size: rem(18);
+        line-height: lh(30);
+        a {
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(30);
+            color: inherit;
+            &:hover,
+            &:focus,
+            &:active {
+                color: $color-primary;
+            }
+        }
+    }
+    &__list {
+        & > li {
+            padding-left: rem(20);
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(30);
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(12);
+                height: rem(12);
+                border-radius: 50%;
+                background-color: $color-black;
+                position: absolute;
+                top: rem(9);
+                left: 0;
+            }
+        }
+    }
+    &__list--sub {
+        & > li {
+            padding-left: rem(14);
+            font-family: $font-nanum-square;
+            font-size: rem(18);
+            line-height: lh(30);
+            position: relative;
+            &::before {
+                content: "";
+                width: rem(6);
+                height: rem(6);
+                border-radius: 50%;
+                background-color: $color-black;
+                position: absolute;
+                top: rem(12);
+                left: 0;
+            }
+        }
+    }
+}
+
 @media (max-width: 1150px) {
     .greeting {
         &__main {

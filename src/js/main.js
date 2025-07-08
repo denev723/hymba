@@ -409,4 +409,16 @@ $(document).ready(function () {
   } else {
     initSidePager();
   }
+
+  if ($(".tab--mini").length > 0) {
+    $(".tab--mini")
+      .find("a")
+      .each(function () {
+        if ($(this).attr("href") === location.pathname) {
+          $(this).parent().addClass("tab__item--active");
+        } else {
+          $(this).parent().removeClass("tab__item--active");
+        }
+      });
+  }
 });

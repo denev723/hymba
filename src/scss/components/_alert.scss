@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "sass:color";
+
+.alert {
+    padding: rem(10) rem(20);
+    border-radius: rem(5);
+    font-family: $font-nanum-square;
+    font-size: rem(18);
+    line-height: lh(28);
+    &.alert-info {
+        border: 1px solid color.scale($color-info, $lightness: -50%);
+        background-color: $color-info;
+        color: color.scale($color-info, $lightness: -50%);
+    }
+    &.alert-active {
+        border: 1px solid color.scale($color-active, $lightness: -50%);
+        background-color: $color-active;
+        color: color.scale($color-active, $lightness: -50%);
+    }
+    &.alert-warning {
+        border: 1px solid color.scale($color-warning, $lightness: -50%);
+        background-color: $color-warning;
+        color: color.scale($color-warning, $lightness: -50%);
+    }
+    &.alert-danger {
+        border: 1px solid color.scale($color-danger, $lightness: -50%);
+        background-color: $color-danger;
+        color: color.scale($color-danger, $lightness: -50%);
+    }
+}

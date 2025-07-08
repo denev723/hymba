@@ -133,15 +133,179 @@
         margin: 0 auto;
         padding: rem(80) 0 rem(180);
     }
+    &__top {
+        display: flex;
+        gap: 0 rem(10);
+        margin-bottom: rem(50);
+        &--end {
+            justify-content: flex-end;
+        }
+        &--between {
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__caution {
+        font-family: $font-nanum-square;
+        font-size: rem(18);
+        line-height: lh(28);
+    }
+    &__caution-btns {
+        display: flex;
+        gap: 0 rem(6);
+        margin-top: rem(15);
+        margin-bottom: rem(50);
+    }
 }
 
 .page-title {
-    margin-bottom: rem(85);
+    margin-bottom: rem(80);
     font-family: $font-nanum-square;
     font-weight: 800;
     font-size: rem(36);
-    line-height: 1;
+    line-height: lh(46);
     text-align: center;
+    small {
+        font-size: rem(26);
+        line-height: lh(36);
+    }
+    &--sub {
+        height: rem(200);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: rem(80);
+        border-radius: rem(20);
+        background-color: #f2f2f2;
+        p {
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(32);
+            line-height: 1;
+            color: $color-white;
+        }
+    }
+    &--mini {
+        padding-left: rem(37);
+        font-family: $font-nanum-square;
+        font-weight: 800;
+        font-size: rem(24);
+        line-height: 1;
+        position: relative;
+        &::before {
+            content: "";
+            width: rem(22);
+            height: rem(22);
+            background-image: url(../images/subpage/squares.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.page-summary {
+    margin-bottom: rem(80);
+}
+
+.tab {
+    &--primary {
+        margin-bottom: rem(80);
+    }
+    &--secondary {
+        display: grid;
+        gap: rem(10);
+        margin-bottom: rem(80);
+        &.tab--item-5 {
+            grid-template-columns: repeat(5, 1fr);
+        }
+        &.tab--item-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .tab__item {
+            &-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: rem(18) rem(15);
+                border-radius: rem(9);
+                background-color: $color-tab-secondary;
+                font-family: $font-nanum-square;
+                font-weight: 700;
+                font-size: rem(18);
+                line-height: lh(26);
+                color: $color-black;
+                &:hover {
+                    background-color: $color-tab-secondary-hover;
+                }
+            }
+            &--active {
+                .tab__item-link {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    &:hover {
+                        background-color: $color-primary-hover;
+                    }
+                }
+            }
+        }
+    }
+    &--mini {
+        display: inline-flex;
+        border-radius: rem(5);
+        overflow: hidden;
+        .tab__item {
+            min-width: rem(100);
+            &-link {
+                display: block;
+                padding: rem(17) rem(10);
+                background-color: $color-tab-secondary;
+                font-family: $font-nanum-square;
+                font-size: rem(16);
+                line-height: 1;
+                color: $color-black;
+                text-align: center;
+                &:hover {
+                    background-color: $color-tab-secondary-hover;
+                }
+            }
+            &--active {
+                .tab__item-link {
+                    background-color: $color-primary;
+                    color: $color-white;
+                    &:hover {
+                        background-color: $color-primary-hover;
+                    }
+                }
+            }
+        }
+    }
+    &--select {
+        appearance: unset;
+        width: 100%;
+        max-width: rem(250);
+        height: rem(50);
+        border-radius: rem(5);
+        border: 1px solid #9d9d9d;
+        padding: rem(10) rem(25);
+        background-image: url(../images/sub/select-darr.png);
+        background-size: rem(15);
+        background-repeat: no-repeat;
+        background-position: calc(100% - rem(20)) 50%;
+        color: $color-black;
+        font-family: $font-nanum-square;
+        font-size: rem(16);
+        line-height: 1;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        &:hover {
+            border-color: $color-secondary;
+        }
+    }
 }
 
 @media (max-width: 768px) {

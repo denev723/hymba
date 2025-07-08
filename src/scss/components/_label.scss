@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.label {
+    display: inline-block;
+    padding: rem(6) rem(5);
+    border-radius: rem(5);
+    font-family: $font-nanum-square;
+    font-size: rem(14);
+    line-height: 1;
+    &.label-primary {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    &.label-warning {
+        background-color: $color-warning;
+        color: $color-white;
+    }
+    &.label-danger {
+        background-color: $color-danger;
+        color: $color-white;
+    }
+    &.label-info {
+        background-color: $color-info;
+        color: $color-white;
+    }
+    &.label-active {
+        background-color: $color-active;
+        color: $color-white;
+    }
+}
