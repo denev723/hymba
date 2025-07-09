@@ -1,0 +1,77 @@
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+
+.board-read {
+    border-top: rem(2) solid $color-black;
+    &__top {
+        min-height: rem(90);
+        display: flex;
+        align-items: center;
+        gap: 0 rem(20);
+        padding: rem(15) 0;
+        border-bottom: 1px solid #dddddd;
+        font-family: $font-nanum-square;
+    }
+    &__body {
+        border-bottom: 1px solid $color-black;
+        margin-bottom: rem(80);
+    }
+    &__btns {
+        display: flex;
+        justify-content: center;
+        gap: 0 rem(6);
+    }
+    &__content {
+        padding: rem(30) rem(20) rem(80);
+    }
+    &__title {
+        flex: 1;
+        font-size: rem(20);
+        line-height: lh(26);
+        &:has(.label) {
+            display: flex;
+            gap: 0 rem(10);
+        }
+        .label {
+            flex-shrink: 0;
+        }
+    }
+    &__date {
+        width: rem(150);
+        font-weight: 700;
+        font-size: rem(18);
+        text-align: center;
+    }
+    &__views {
+        width: rem(120);
+        text-align: center;
+        font-size: rem(18);
+        line-height: lh(28);
+        span {
+            display: inline-block;
+            padding-left: rem(36);
+            background-image: url(../images/board/view-logo.png);
+            background-size: rem(28);
+            background-repeat: no-repeat;
+            background-position: 0% 50%;
+        }
+    }
+    &__file {
+        display: flex;
+        align-items: center;
+        gap: 0 rem(20);
+        padding: rem(15) 0;
+        border-top: 1px solid #dddddd;
+        &-title {
+            width: rem(160);
+            font-family: $font-nanum-square;
+            font-weight: 700;
+            font-size: rem(18);
+            line-height: 1;
+            text-align: center;
+        }
+        .af-file__list {
+            flex: 1;
+        }
+    }
+}

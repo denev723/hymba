@@ -143,6 +143,46 @@
     }
 }
 
+.btn-download {
+    width: rem(40);
+    height: rem(34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: rem(4);
+    background-color: $color-primary;
+    font-size: rem(20);
+    color: $color-white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-primary-hover;
+    }
+}
+
+.btn-round {
+    display: inline-flex;
+    align-items: center;
+    padding: rem(10) rem(29) rem(10) rem(16);
+    border-radius: rem(100);
+    border: rem(2) solid $color-white;
+    background-image: url(../images/btn-round-rarr.png);
+    background-size: rem(7);
+    background-repeat: no-repeat;
+    background-position: calc(100% - rem(12)) calc(50% - rem(1));
+    font-family: $font-nanum-square;
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(14);
+    color: $color-white;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+}
+
 .btn {
     display: inline-block;
     padding: rem(10) rem(16);

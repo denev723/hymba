@@ -410,8 +410,8 @@ $(document).ready(function () {
     initSidePager();
   }
 
-  if ($(".tab--mini").length > 0) {
-    $(".tab--mini")
+  if ($(".tab__list--mini").length > 0) {
+    $(".tab__list--mini")
       .find("a")
       .each(function () {
         if ($(this).attr("href") === location.pathname) {

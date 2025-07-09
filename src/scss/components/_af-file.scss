@@ -1,0 +1,26 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.af-file {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(5) 0;
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 0 rem(7);
+    }
+    &__content {
+        font-family: $font-nanum-square;
+        line-height: 1;
+        &-title {
+            margin-bottom: rem(5);
+            font-size: rem(14);
+        }
+        &-info {
+            font-size: rem(12);
+        }
+    }
+}

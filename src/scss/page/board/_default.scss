@@ -2,6 +2,8 @@
 @use "../../abstracts/mixins" as *;
 
 .board--default {
+    max-width: rem(1020);
+    margin: 0 auto;
     .board__top {
         display: flex;
         justify-content: flex-end;

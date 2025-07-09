@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as *;
 
 .label {
+    height: rem(26);
     display: inline-block;
     padding: rem(6) rem(5);
     border-radius: rem(5);

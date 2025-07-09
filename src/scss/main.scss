@@ -14,6 +14,8 @@
 @use "components/pagination" as *;
 @use "components/alert" as *;
 @use "components/label" as *;
+@use "components/af-file" as *;
+@use "components/image" as *;
 
 // pages
 @use "page/home" as *;
@@ -23,3 +25,5 @@
 // page
 @use "page/board/professor" as *;
 @use "page/board/default" as *;
+@use "page/board/gallery" as *;
+@use "page/board/read" as *;

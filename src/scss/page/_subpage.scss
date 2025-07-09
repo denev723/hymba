@@ -50,6 +50,124 @@
     }
 }
 
+.program {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        &:nth-child(1) {
+            .item {
+                &__top {
+                    background-image: url(../images/subpage/program-bg-1.png);
+                }
+            }
+        }
+        &:nth-child(2) {
+            .item {
+                &__top {
+                    background-image: url(../images/subpage/program-bg-2.png);
+                }
+            }
+        }
+        &:nth-child(3) {
+            .item {
+                &__top {
+                    background-image: url(../images/subpage/program-bg-3.png);
+                }
+            }
+        }
+        &:nth-child(4) {
+            .item {
+                &__top {
+                    background-image: url(../images/subpage/program-bg-4.png);
+                }
+            }
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            .item {
+                &__body {
+                    background-color: #eeeeee;
+                }
+            }
+        }
+        .item {
+            &__top {
+                height: rem(340);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: rem(10) rem(20);
+                background-color: #f2f2f2;
+                font-family: $font-nanum-square;
+                color: $color-white;
+                text-align: center;
+            }
+            &__body {
+                display: flex;
+                flex: 1;
+                background-color: $color-white;
+            }
+            &__title {
+                margin-bottom: rem(12);
+                font-weight: 800;
+                font-size: rem(32);
+                line-height: 1;
+                &-wrap {
+                    display: flex;
+                    gap: 0 rem(6);
+                    margin-bottom: rem(14);
+                    p {
+                        font-family: $font-nanum-square;
+                        font-weight: 700;
+                        font-size: rem(20);
+                        line-height: lh(26);
+                    }
+                }
+            }
+            &__desc {
+                margin-bottom: rem(33);
+                font-size: rem(18);
+                line-height: lh(28);
+            }
+            &__content {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+                padding: rem(30) rem(20);
+            }
+            &__number {
+                span {
+                    display: inline-block;
+                    padding: rem(5) rem(10);
+                    border-radius: rem(100);
+                    background-color: $color-black;
+                    font-family: $font-nanum-square;
+                    font-weight: 700;
+                    font-size: rem(16);
+                    line-height: lh(16);
+                    color: $color-white;
+                }
+            }
+            &__list {
+                &-item {
+                    padding-left: rem(10);
+                    font-family: $font-nanum-square;
+                    font-size: rem(16);
+                    line-height: lh(26);
+                    word-break: keep-all;
+                    text-indent: rem(-10);
+                }
+            }
+        }
+    }
+}
+
 .location {
     &__map {
         height: rem(680);
@@ -129,7 +247,8 @@
 .track-intro,
 .graduation,
 .changes,
-.scholarship {
+.scholarship,
+.association {
     &__row {
         margin-bottom: rem(50);
         &:last-child {
@@ -190,6 +309,17 @@
                 position: absolute;
                 top: rem(9);
                 left: 0;
+            }
+            a {
+                font-family: $font-nanum-square;
+                font-size: rem(18);
+                line-height: lh(30);
+                color: inherit;
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $color-primary;
+                }
             }
         }
     }
