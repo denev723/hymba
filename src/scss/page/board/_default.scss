@@ -104,3 +104,65 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .board--default {
+        .board__top {
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            gap: rem(10) 0;
+            margin-bottom: rem(15);
+        }
+        .board-form {
+            &__wrapper {
+                input {
+                    width: 100%;
+                    max-width: rem(150);
+                    height: rem(40);
+                    padding: rem(8) rem(15);
+                    font-size: rem(14);
+                }
+            }
+        }
+        .board__list {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: rem(40);
+            .board__item {
+                .board__item-link {
+                    min-height: rem(70);
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: rem(10) 0;
+                    padding: rem(20);
+                    background-image: none;
+                    font-family: $font-nanum-square;
+                    font-size: rem(14);
+                    line-height: lh(24);
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-image: none;
+                        .board__item-date {
+                            background-image: url(../images/board/default/notice-rarr-b.png);
+                        }
+                    }
+                    .board__item-date {
+                        width: 100%;
+                        padding-right: rem(40);
+                        background-image: url(../images/board/default/notice-rarr-g.png);
+                        background-size: rem(40);
+                        background-repeat: no-repeat;
+                        background-position: 100% 50%;
+                        text-align: left;
+                        position: relative;
+                    }
+                    .board__item-title {
+                        width: 100%;
+                        flex: auto;
+                    }
+                }
+            }
+        }
+    }
+}

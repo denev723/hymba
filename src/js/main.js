@@ -378,6 +378,11 @@ $(document).ready(function () {
     } else {
       // 모바일 (768px 이하): click 토글
       $snbMenus.off("mouseover mouseout click").on("click", function (e) {
+        // 서브메뉴 링크를 클릭한 경우 메뉴 토글을 하지 않음
+        if ($(e.target).closest(".snb__depth-menu__item-link").length > 0) {
+          return; // 기본 동작 허용 (링크 이동)
+        }
+
         e.preventDefault();
         e.stopPropagation(); // 이벤트 버블링 방지
 

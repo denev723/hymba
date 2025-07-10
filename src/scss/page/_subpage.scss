@@ -238,6 +238,7 @@
     }
     &__content {
         flex: 1;
+        padding: 0 rem(20);
         font-family: $font-nanum-square;
         font-size: rem(18);
         line-height: lh(30);
@@ -248,12 +249,18 @@
 .graduation,
 .changes,
 .scholarship,
-.association {
+.association,
+.recruit,
+.explain,
+.acceptance {
     &__row {
         margin-bottom: rem(50);
         &:last-child {
             margin-bottom: 0;
         }
+    }
+    &__btn-wrapper {
+        margin-bottom: rem(30);
     }
     &__title {
         padding-left: rem(37);
@@ -261,7 +268,8 @@
         font-family: $font-nanum-square;
         font-weight: 800;
         font-size: rem(24);
-        line-height: 1;
+        line-height: lh(34);
+        word-break: keep-all;
         position: relative;
         &::before {
             content: "";
@@ -272,9 +280,8 @@
             background-repeat: no-repeat;
             background-position: 50% 50%;
             position: absolute;
-            top: 50%;
+            top: rem(6);
             left: 0;
-            transform: translateY(-50%);
         }
     }
     &__content {
@@ -342,6 +349,86 @@
             }
         }
     }
+    &__btn-list {
+        display: flex;
+        gap: rem(10);
+        padding: 0;
+        margin-top: rem(105);
+        li {
+            flex: 1;
+            &:nth-child(1) {
+                a {
+                    span {
+                        &::before {
+                            width: 70px;
+                            background-image: url(../images/subpage/acceptance-btn-logo-1.png);
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                a {
+                    span {
+                        &::before {
+                            width: 70px;
+                            background-image: url(../images/subpage/acceptance-btn-logo-2.png);
+                        }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                a {
+                    span {
+                        &::before {
+                            width: 62px;
+                            background-image: url(../images/subpage/acceptance-btn-logo-3.png);
+                        }
+                    }
+                }
+            }
+            &:nth-child(4) {
+                a {
+                    span {
+                        &::before {
+                            width: 64px;
+                            background-image: url(../images/subpage/acceptance-btn-logo-4.png);
+                        }
+                    }
+                }
+            }
+            a {
+                display: block;
+                padding: rem(35) rem(10) rem(40);
+                border-radius: rem(10);
+                background-color: #333333;
+                font-family: $font-nanum-square;
+                font-weight: 700;
+                font-size: rem(24);
+                line-height: 1;
+                text-align: center;
+                color: #fff;
+                &:hover {
+                    background-color: #0e4194;
+                }
+                span {
+                    display: inline-block;
+                    padding-top: rem(105);
+                    position: relative;
+                    &::before {
+                        content: "";
+                        height: rem(70);
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 1150px) {
@@ -359,6 +446,20 @@
         }
         &__content {
             flex: auto;
+        }
+    }
+
+    .program {
+        &__list {
+            max-width: rem(650);
+            grid-template-columns: repeat(1, 1fr);
+            margin: 0 auto;
+        }
+    }
+
+    .location {
+        &__title {
+            width: rem(200);
         }
     }
 }
@@ -395,6 +496,258 @@
         &__thumb {
             max-width: rem(200);
             margin-bottom: rem(14);
+        }
+    }
+
+    .program {
+        &__item {
+            &:nth-child(3) {
+                .item {
+                    &__body {
+                        background-color: $color-white;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                .item {
+                    &__body {
+                        background-color: #eeeeee;
+                    }
+                }
+            }
+            .item {
+                &__top {
+                    height: rem(280);
+                    padding: rem(10);
+                }
+                &__title {
+                    margin-bottom: rem(7);
+                    font-size: rem(22);
+                    &-wrap {
+                        display: flex;
+                        gap: 0 rem(6);
+                        margin-bottom: rem(14);
+                        p {
+                            font-family: $font-nanum-square;
+                            font-weight: 700;
+                            font-size: rem(16);
+                            line-height: lh(22);
+                        }
+                    }
+                }
+                &__desc {
+                    margin-bottom: rem(23);
+                    font-size: rem(14);
+                    line-height: lh(24);
+                    word-break: keep-all;
+                }
+                &__content {
+                    padding: rem(20) rem(15);
+                }
+                &__number {
+                    span {
+                        padding: rem(4) rem(8);
+                        font-size: rem(14);
+                        line-height: lh(14);
+                    }
+                }
+                &__list {
+                    &-item {
+                        padding-left: rem(8);
+                        font-size: rem(14);
+                        line-height: lh(24);
+                        text-indent: rem(-8);
+                    }
+                }
+            }
+        }
+    }
+
+    .location {
+        &__map {
+            height: rem(400);
+            margin-bottom: rem(40);
+        }
+        &__item {
+            min-height: auto;
+            flex-direction: column;
+            align-items: initial;
+            padding: rem(20);
+        }
+        &__title {
+            width: 100%;
+            justify-content: initial;
+            gap: 0 rem(10);
+            margin-bottom: rem(15);
+            font-size: rem(18);
+            &-text {
+                min-width: auto;
+                text-align: center;
+            }
+            &-logo {
+                width: rem(29);
+                height: rem(35);
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+            &--address {
+                .location__title-logo {
+                    background-size: rem(19);
+                }
+            }
+            &--bus {
+                .location__title-logo {
+                    background-size: rem(23);
+                }
+            }
+            &--subway {
+                .location__title-logo {
+                    background-size: rem(27);
+                }
+            }
+            &--car {
+                .location__title-logo {
+                    background-size: rem(29);
+                }
+            }
+        }
+        &__content {
+            flex: auto;
+            padding: 0;
+            font-size: rem(14);
+            line-height: lh(26);
+        }
+    }
+
+    .track-intro,
+    .graduation,
+    .changes,
+    .scholarship,
+    .association,
+    .recruit,
+    .explain,
+    .acceptance {
+        &__row {
+            margin-bottom: rem(30);
+        }
+        &__btn-wrapper {
+            margin-bottom: rem(20);
+        }
+        &__title {
+            padding-left: rem(30);
+            margin-bottom: rem(20);
+            font-size: rem(18);
+            line-height: lh(28);
+            &::before {
+                width: rem(18);
+                height: rem(18);
+                top: rem(5);
+            }
+        }
+        &__content {
+            font-size: rem(14);
+            line-height: lh(26);
+            a {
+                font-size: rem(14);
+                line-height: lh(26);
+            }
+        }
+        &__list {
+            & > li {
+                padding-left: rem(16);
+                font-size: rem(14);
+                line-height: lh(26);
+                &::before {
+                    width: rem(8);
+                    height: rem(8);
+                }
+                a {
+                    font-size: rem(14);
+                    line-height: lh(26);
+                }
+            }
+        }
+        &__list--sub {
+            & > li {
+                padding-left: rem(12);
+                font-size: rem(14);
+                line-height: lh(26);
+                &::before {
+                    width: rem(4);
+                    height: rem(4);
+                }
+            }
+        }
+        &__btn-list {
+            margin-top: rem(60);
+            flex-wrap: wrap;
+            li {
+                flex: auto;
+                width: calc((100% - rem(10)) / 2);
+                a {
+                    font-size: rem(16);
+                    span {
+                        padding-top: rem(60);
+                        &::before {
+                            height: rem(42);
+                        }
+                    }
+                }
+                &:nth-child(1) {
+                    a {
+                        span {
+                            &::before {
+                                width: 42px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2) {
+                    a {
+                        span {
+                            &::before {
+                                width: 42px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3) {
+                    a {
+                        span {
+                            &::before {
+                                width: 37px;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(4) {
+                    a {
+                        span {
+                            &::before {
+                                width: 38px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .program {
+        &__item {
+            .item {
+                &__body {
+                    flex-direction: column;
+                    gap: rem(20) 0;
+                    padding: rem(20) rem(30);
+                }
+                &__content {
+                    padding: 0;
+                    justify-content: flex-start;
+                }
+            }
         }
     }
 }

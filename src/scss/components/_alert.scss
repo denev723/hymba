@@ -3,29 +3,37 @@
 @use "sass:color";
 
 .alert {
-    padding: rem(10) rem(20);
-    border-radius: rem(5);
+    padding: rem(15);
+    border: 1px solid transparent;
+    border-radius: rem(4);
     font-family: $font-nanum-square;
     font-size: rem(18);
     line-height: lh(28);
     &.alert-info {
-        border: 1px solid color.scale($color-info, $lightness: -50%);
-        background-color: $color-info;
-        color: color.scale($color-info, $lightness: -50%);
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        color: #31708f;
     }
-    &.alert-active {
-        border: 1px solid color.scale($color-active, $lightness: -50%);
-        background-color: $color-active;
-        color: color.scale($color-active, $lightness: -50%);
+    &.alert-success {
+        background-color: #dff0d8;
+        border-color: #d6e9c6;
+        color: #3c763d;
     }
     &.alert-warning {
-        border: 1px solid color.scale($color-warning, $lightness: -50%);
-        background-color: $color-warning;
-        color: color.scale($color-warning, $lightness: -50%);
+        background-color: #fcf8e3;
+        border-color: #faebcc;
+        color: #8a6d3b;
     }
     &.alert-danger {
-        border: 1px solid color.scale($color-danger, $lightness: -50%);
-        background-color: $color-danger;
-        color: color.scale($color-danger, $lightness: -50%);
+        background-color: #f2dede;
+        border-color: #ebccd1;
+        color: #a94442;
+    }
+}
+
+@media (max-width: 768px) {
+    .alert {
+        font-size: rem(14);
+        line-height: lh(24);
     }
 }

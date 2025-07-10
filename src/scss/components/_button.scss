@@ -241,4 +241,18 @@
         background-size: rem(15);
         font-size: rem(12);
     }
+
+    .btn-submit {
+        padding: rem(13) rem(12);
+        font-size: rem(14);
+    }
+
+    .btn {
+        padding: rem(8) rem(12);
+        font-size: rem(12);
+        &.btn--lg {
+            padding: rem(17) rem(23);
+            font-size: rem(16);
+        }
+    }
 }

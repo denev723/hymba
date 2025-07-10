@@ -3,7 +3,9 @@
 
 .label {
     height: rem(26);
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: rem(6) rem(5);
     border-radius: rem(5);
     font-family: $font-nanum-square;
@@ -28,5 +30,12 @@
     &.label-active {
         background-color: $color-active;
         color: $color-white;
+    }
+}
+
+@media (max-width: 768px) {
+    .label {
+        height: rem(24);
+        font-size: rem(12);
     }
 }

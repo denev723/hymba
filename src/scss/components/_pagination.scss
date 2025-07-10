@@ -40,3 +40,16 @@
         }
     }
 }
+
+@media (max-width: 768px) {
+    .pagination {
+        &__item {
+            &-link {
+                width: rem(44);
+                height: rem(44);
+                border-radius: rem(10);
+                font-size: rem(14);
+            }
+        }
+    }
+}

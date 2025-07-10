@@ -79,3 +79,50 @@
         }
     }
 }
+
+@media (max-width: 1000px) {
+    .board--gallery {
+        .board__body {
+            max-width: rem(728);
+        }
+        .board__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .board--gallery {
+        .board__body {
+            max-width: rem(340);
+        }
+        .board__list {
+            grid-template-columns: repeat(1, 1fr);
+            gap: rem(30);
+            .board__item {
+                &-link {
+                    gap: rem(15) 0;
+                }
+                &-title,
+                &-title--en {
+                    min-height: rem(48);
+                    font-size: rem(14);
+                    line-height: lh(24);
+                }
+                &-date {
+                    margin-bottom: rem(15);
+                    font-family: $font-nanum-gothic;
+                    font-size: rem(12);
+                    line-height: 1;
+                    color: #a5a5a5;
+                }
+                &-views {
+                    padding-left: rem(28);
+                    background-size: rem(20);
+                    font-size: rem(12);
+                    line-height: lh(20);
+                }
+            }
+        }
+    }
+}

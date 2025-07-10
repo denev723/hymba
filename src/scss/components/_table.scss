@@ -1,12 +1,6 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
-.table-wrapper {
-    p {
-        margin-top: rem(5);
-    }
-}
-
 .table {
     &__wrapper {
         &[data-scroll="scroll"] {
@@ -65,6 +59,28 @@
         }
         .bottom {
             border-bottom: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .table {
+        &__content {
+            font-size: rem(12);
+            line-height: lh(22);
+        }
+        &--with-border {
+            th {
+                padding: rem(12);
+                font-size: rem(16);
+                line-height: lh(26);
+                color: $color-black;
+            }
+            td {
+                padding: rem(12);
+                font-size: rem(14);
+                line-height: lh(24);
+            }
         }
     }
 }
