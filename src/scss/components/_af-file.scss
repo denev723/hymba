@@ -13,14 +13,38 @@
         gap: 0 rem(7);
     }
     &__content {
+        width: calc(100% - rem(41));
         font-family: $font-nanum-square;
         line-height: 1;
         &-title {
             margin-bottom: rem(5);
             font-size: rem(14);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         &-info {
             font-size: rem(12);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .af-file {
+        &__item {
+            display: flex;
+            align-items: center;
+            gap: 0 rem(4);
+        }
+        &__content {
+            width: calc(100% - rem(41));
+            &-title {
+                margin-bottom: rem(5);
+                font-size: rem(12);
+            }
+            &-info {
+                font-size: rem(10);
+            }
         }
     }
 }

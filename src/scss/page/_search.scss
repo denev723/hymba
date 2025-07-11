@@ -2,10 +2,23 @@
 @use "../abstracts/mixins" as *;
 
 .search-result {
+    .pagination {
+        &__item {
+            &-link {
+                background-color: $color-white;
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: $color-pagination-default-hover;
+                }
+            }
+        }
+    }
     &__top {
-        padding: rem(40) 0;
+        padding: rem(40) 0 rem(80);
     }
     &__body {
+        padding-top: rem(80);
         position: relative;
         &::before {
             content: "";
@@ -61,6 +74,143 @@
             cursor: pointer;
             &:hover {
                 background-image: url(../images/mag-h.png);
+            }
+        }
+    }
+    &__text {
+        margin-bottom: rem(100);
+        font-family: $font-nanum-square;
+        font-weight: 800;
+        font-size: rem(34);
+        line-height: lh(44);
+        span {
+            color: $color-primary;
+        }
+    }
+    &__row {
+        margin-bottom: rem(100);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .row__top {
+            margin-bottom: rem(20);
+        }
+        .row__body {
+            margin-bottom: rem(40);
+        }
+        .row__title {
+            font-family: $font-nanum-square;
+            font-weight: 800;
+            font-size: rem(28);
+            line-height: 1;
+            span {
+                color: $color-primary;
+                font-size: rem(20);
+            }
+        }
+    }
+    &__item {
+        border-bottom: 1px solid #e1e1e1;
+        &:first-child {
+            border-top: rem(3) solid $color-black;
+        }
+        &-link {
+            display: block;
+            padding: rem(30) rem(10);
+            font-family: $font-nanum-square;
+        }
+        &-title {
+            margin-bottom: rem(15);
+            font-weight: 700;
+            font-size: rem(22);
+            line-height: lh(28);
+        }
+        &-desc {
+            margin-bottom: rem(20);
+            min-height: rem(52);
+            font-size: rem(16);
+            line-height: lh(26);
+        }
+        &-more {
+            display: inline-block;
+            padding-left: rem(30);
+            background-image: url(../images/subpage/search-more.png);
+            background-size: rem(22);
+            background-repeat: no-repeat;
+            background-position: 0% 50%;
+            font-size: rem(14);
+            line-height: lh(24);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .search-result {
+        &__top {
+            padding: rem(20) 0 rem(40);
+        }
+        &__body {
+            padding-top: rem(40);
+            &::before {
+                height: calc(100% + rem(80));
+            }
+        }
+        &__form {
+            max-width: rem(544);
+            margin: 0 auto;
+            position: relative;
+            input {
+                height: rem(40);
+                padding: rem(10) rem(10) rem(10) rem(42);
+                border-radius: rem(30);
+                font-size: rem(14);
+            }
+            .search-result__submit {
+                width: rem(42);
+                height: rem(40);
+                background-size: rem(18);
+            }
+        }
+        &__text {
+            margin-bottom: rem(50);
+            font-size: rem(22);
+            line-height: lh(32);
+        }
+        &__row {
+            margin-bottom: rem(50);
+            .row__top {
+                margin-bottom: rem(15);
+            }
+            .row__body {
+                margin-bottom: rem(30);
+            }
+            .row__title {
+                font-size: rem(20);
+                span {
+                    font-size: rem(16);
+                }
+            }
+        }
+        &__item {
+            &-link {
+                padding: rem(20) rem(10);
+            }
+            &-title {
+                margin-bottom: rem(10);
+                font-size: rem(18);
+                line-height: lh(24);
+            }
+            &-desc {
+                margin-bottom: rem(15);
+                min-height: rem(48);
+                font-size: rem(14);
+                line-height: lh(24);
+            }
+            &-more {
+                padding-left: rem(26);
+                background-size: rem(18);
+                font-size: rem(12);
+                line-height: lh(22);
             }
         }
     }
