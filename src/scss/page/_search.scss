@@ -118,6 +118,15 @@
             display: block;
             padding: rem(30) rem(10);
             font-family: $font-nanum-square;
+            &:hover {
+                .search-result__item-title {
+                    color: $color-primary;
+                }
+                .search-result__item-more {
+                    background-image: url(../images/subpage/search-more-h.png);
+                    color: $color-primary;
+                }
+            }
         }
         &-title {
             margin-bottom: rem(15);
@@ -140,6 +149,7 @@
             background-position: 0% 50%;
             font-size: rem(14);
             line-height: lh(24);
+            color: $color-black;
         }
     }
 }
